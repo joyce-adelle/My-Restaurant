@@ -19,17 +19,17 @@ public class OrderService {
     public OrderService() {
 
         this.orders = new ArrayList<>(Arrays.asList(Order.builder()
-                        .id(10L)
+                        .id(1L)
                         .items(Arrays.asList("burger", "coffee"))
                         .status(Status.PENDING)
                         .build(),
                 Order.builder()
-                        .id(11L)
+                        .id(2L)
                         .items(Arrays.asList("coffee", "meat pie", "apple"))
                         .status(Status.COMPLETED)
                         .build(),
                 Order.builder()
-                        .id(12L)
+                        .id(3L)
                         .items(Arrays.asList("egg roll", "tea"))
                         .status(Status.INPROGRESS)
                         .build()));
@@ -62,6 +62,9 @@ public class OrderService {
     }
 
     public Order addOrder(List<String> items) {
+
+        if (items == null || items.isEmpty())
+            return null;
 
         Order newOrder = Order.builder()
                 .id(orders.size() + 1L)
