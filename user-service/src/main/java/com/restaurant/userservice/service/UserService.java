@@ -87,7 +87,7 @@ public class UserService {
 
     }
 
-    public boolean validateUser(long id){
+    public boolean validateUser(long id) {
 
         Optional<User> userOp = users.stream().filter(user -> user.getId() == id).findFirst();
         return userOp.map(User::isActive).orElse(false);
