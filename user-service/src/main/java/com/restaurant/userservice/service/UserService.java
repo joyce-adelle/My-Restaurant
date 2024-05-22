@@ -13,7 +13,7 @@ import java.util.Optional;
 @Slf4j
 public class UserService {
 
-    private List<User> users;
+    private final List<User> users;
 
     public UserService() {
 
@@ -63,7 +63,7 @@ public class UserService {
     public User addUser(String name) {
 
         User newUser = User.builder()
-                .id(users.size() + 10L)
+                .id((users.size() + 1) * 10L)
                 .name(name)
                 .active(true)
                 .build();

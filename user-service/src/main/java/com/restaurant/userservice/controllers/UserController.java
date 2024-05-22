@@ -5,13 +5,12 @@ import com.restaurant.userservice.model.User;
 import com.restaurant.userservice.model.ValidateUserDTO;
 import com.restaurant.userservice.service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequiredArgsConstructor
 @RequestMapping("/users")
 public class UserController {
